@@ -1,0 +1,27 @@
+{#
+ * I display the edit formn for a ToDo.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% extends "base.twig" %}
+{% block content %}
+<form action="/save" method="post" role="form" >
+  <input type="hidden" name="id" value="{{ todo.getID() }}" />
+  <div class="form-group">
+    <label for="task">Task:</label>
+    <input class="form-control" name="task" id="task" value="{{ todo.getTask() }}">
+  </div>
+  <div class="checkbox">
+    <label>
+    	<input 
+    		type="checkbox" 
+    		name="complete" 
+    		id="complete" 
+    		{% if todo.getComplete() %}checked{% endif %} />
+    	Completed?
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{#
+ * I am the may layout file. Other views extend me.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+<!DOCTYPE html>
+<html>
+<head>
+<title>My ToDo</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% include 'menu.twig' %}
+{% include 'response.twig' %}
+{% block content %}{% endblock %}
+{% include 'footer.twig' %}
+</body>
+</html>

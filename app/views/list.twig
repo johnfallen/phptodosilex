@@ -1,0 +1,40 @@
+{#
+ * I display a list of ToDo's.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% extends "base.twig" %}
+{% block content %}
+{% if todos|length > 0 %}
+	<h1>List of Things To Do</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Task</th>
+				<th>Completed?</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in todos %}
+			<tr>
+	    		<td><a href="/edit/{{ item.getID() }}">edit</a></td>
+	    		<td>{{ item.getTask() }}</td>
+	    		<td>
+	    			{% if item.getComplete() %}
+	    				yes
+	    			{% else %}
+	    				no
+	    			{% endif %}
+	    		</td>
+	    		<td><a href="/delete/{{ item.getID() }}">delete</a></td>
+	    	</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+<h1>No To Dos! Add One.</h1>
+{% endif %}
+{% endblock %}

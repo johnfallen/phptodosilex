@@ -1,0 +1,12 @@
+{# 
+ * I display responses from the application.
+ *
+ * @author John Allen
+ * @version 1.0
+#}
+{% if app.response is defined %}
+<div class="alert alert-{{ app.response.type }}  alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	{{ app.response.message }}
+	</div>
+{% endif %}

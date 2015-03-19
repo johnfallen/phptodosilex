@@ -1,0 +1,8 @@
+{
+    "require": {
+        "silex/silex": "1.3.*@dev",
+        "twig/twig": "~1.18"
+    },
+    "require-dev": {
+    }
+}
